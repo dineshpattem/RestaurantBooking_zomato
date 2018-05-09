@@ -85,8 +85,9 @@ def makeWebhookResult(data):
     if forecast is None:
         return {}
     for i in range(0,9):
-    {   i=forecast.get('i')
-        speech = " Forecast details " +i.get('date) }
+       i=forecast.get('i')
+        
+    speech = " Forecast details " +i.get('date) }
      
     # print(json.dumps(item, indent=4))
     
