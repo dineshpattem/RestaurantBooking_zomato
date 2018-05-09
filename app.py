@@ -84,23 +84,24 @@ def makeWebhookResult(data):
     forecast = item.get('forecast')
     if forecast is None:
         return {}
-    for i in range(0,9):
-       i=forecast.get('i')
+    i=forecast.get('0')
+    if i is None:
+        return{}
+       
         
-    speech = " Forecast details " + i.get('date) 
+    
      
     # print(json.dumps(item, indent=4))
     
-    speech1 =  "Weather Forecast in " + location.get('city') + ": " + condition.get('text') + \
-             ", the temperature is " + condition.get('temp') + " " + units.get('temperature') + " for " + condition.get('date')  
+    speech =  "Weather Forecast in " + location.get('city') + ": " + condition.get('text') + \
+             ", the temperature is " + condition.get('temp') + " " + units.get('temperature') + " for " + condition.get('date') + " Forecast details: "  
 
                 
     print("Response:")
     print(speech)
-    print(speech1)
+    
     return {
         "speech": speech,
-        "speech": speech1,
         "displayText": speech,
         # "data": data,
         # "contextOut": [],
