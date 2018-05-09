@@ -84,7 +84,7 @@ def makeWebhookResult(data):
     forecast = item.get('forecast')
     if forecast is None:
         return {}
-    for i in range(0,9)
+    for i in range(0,9):
         i = forecast.get('i')
             
     
